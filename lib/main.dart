@@ -1,3 +1,4 @@
+import 'package:a/schedule.dart';
 import 'package:flutter/material.dart';
 import 'auth.dart';
 import 'home.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const AuthPage(),
           '/home': (context) => const HomePage(),
+          '/schedule': (context) => const SchedulePage(),
         });
   }
 }
