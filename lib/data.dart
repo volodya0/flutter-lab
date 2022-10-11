@@ -1,62 +1,141 @@
-class Subjects {
-  Subjects(this.subjects);
-  Map<int, String> subjects;
+enum Day {
+  sunday,
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday,
 }
 
-class Schedule {
-  Schedule(Map<String, Map<int, String>> scheduleRaw) {
-    scheduleRaw.forEach((key, value) => dayToSubjects[key] = Subjects(value));
+class Subject {
+  Subject(this._subjectRaw);
+  final Map _subjectRaw;
+
+  String getName() {
+    return _subjectRaw['name'];
   }
-  Map<String, Subjects> dayToSubjects = {};
+
+  int getOrder() {
+    return _subjectRaw['order'];
+  }
+
+  String? getLink() {
+    return _subjectRaw['link'];
+  }
+}
+
+class DaySchedule {
+  DaySchedule(this._dayScheduleRaw);
+  final Map _dayScheduleRaw;
+
+  String getDayIndex() {
+    return _dayScheduleRaw['day'];
+  }
+
+  String getDayName() {
+    String name = Day.values[_dayScheduleRaw['day']].name;
+    return name[0].toUpperCase() + name.substring(1);
+  }
+
+  List<Subject> getSubjects() {
+    List<Subject> subjects =
+        (_dayScheduleRaw['subjects'] as List).map((s) => Subject(s)).toList();
+    subjects.sort((s1, s2) => s1.getOrder() - s2.getOrder());
+    return subjects;
+  }
+}
+
+class GroupSchedule {
+  GroupSchedule(this._groupScheduleRaw);
+  final List _groupScheduleRaw;
+
+  DaySchedule getScheduleForDay(int dayIndex) {
+    return DaySchedule(_groupScheduleRaw[dayIndex]);
+  }
 }
 
 class ScheduleData {
-  ScheduleData() {
-    groupToSchedule = {};
-    dataRaw.forEach((key, value) => groupToSchedule[key] = Schedule(value));
-  }
-
-  Map<String, Schedule> groupToSchedule = {};
+  ScheduleData();
 
   List<String> getGroupsNames() {
-    return groupToSchedule.keys.toList();
+    return _dataRaw.keys.toList() as List<String>;
   }
 
-  Schedule getScheduleForGroup(String groupName) {
-    return groupToSchedule[groupName]!;
+  GroupSchedule getScheduleForGroup(String groupName) {
+    return GroupSchedule(_dataRaw[groupName]!);
   }
 
-  String getDayName(int dayIndex) {
-    switch (dayIndex) {
-      case 0:
-        return 'Monday';
-      case 1:
-        return 'Tuesday';
-      case 2:
-        return 'Wednesday';
-      case 3:
-        return 'Thursday';
-      case 4:
-        return 'Friday';
-      default:
-    }
-    return '';
-  }
+  final Map<String, List> _dataRaw = {
+    "KI-48": [
+      {
+        'day': 1,
+        'subjects': [
+          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 2,
+        'subjects': [
+          {'name': 'Programming', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 3,
+        'subjects': [
+          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 4,
+        'subjects': [
+          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 5,
+        'subjects': [
+          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+        ]
+      },
+    ],
+    "KI-47": [
+      {
+        'day': 1,
+        'subjects': [
+          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 2,
+        'subjects': [
+          {'name': 'Programming', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 3,
+        'subjects': [
+          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 4,
+        'subjects': [
+          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+        ]
+      },
+      {
+        'day': 5,
+        'subjects': [
+          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+        ]
+      },
+    ],
+  };
 }
-
-Map<String, Map<String, Map<int, String>>> dataRaw = {
-  "KI-48": {
-    "Monday": {1: 'Math', 3: 'Programming'},
-    "Tuesday": {3: 'Programming'},
-    "Wednesday": {1: 'Math', 3: 'Programming'},
-    "Thursday": {1: 'Math', 3: 'Databases'},
-    "Friday": {1: 'Testing', 3: 'Programming'},
-  },
-  "KI-47": {
-    "Monday": {1: 'Math', 3: 'Programming'},
-    "Tuesday": {3: 'Programming'},
-    "Wednesday": {1: 'Databases', 3: 'Programming'},
-    "Thursday": {1: 'Math'},
-    "Friday": {1: 'Testing', 3: 'Programming'},
-  },
-};

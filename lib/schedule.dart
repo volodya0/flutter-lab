@@ -11,7 +11,8 @@ class SchedulePage extends StatelessWidget {
 
     String selectedGroup = arguments['selectedGroup'];
     ScheduleData scheduleData = ScheduleData();
-    Schedule schedule = scheduleData.getScheduleForGroup(selectedGroup);
+    GroupSchedule groupSchedule =
+        scheduleData.getScheduleForGroup(selectedGroup);
 
     return Scaffold(
         appBar: AppBar(
@@ -28,15 +29,15 @@ class SchedulePage extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
-                String dayName = scheduleData.getDayName(index);
-                List<String> subjects = [];
-                schedule.dayToSubjects[dayName]?.subjects
-                    .forEach((key, value) => subjects.add(value));
-
+                DaySchedule daySchedule =
+                    groupSchedule.getScheduleForDay(index);
                 return ExpansionTile(
-                    title: Text(dayName),
-                    children: subjects
-                        .map((value) => ListTile(title: Text(value)))
+                    title: Text(daySchedule.getDayName()),
+                    children: daySchedule
+                        .getSubjects()
+                        .map((subject) => ListTile(
+                            title: Text(
+                                '${subject.getOrder()}. ${subject.getName()}')))
                         .toList());
               },
               separatorBuilder: (BuildContext context, int index) =>
