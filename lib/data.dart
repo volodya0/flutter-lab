@@ -84,38 +84,81 @@ class ScheduleData {
   };
 
   final Map<String, List> _dataRaw = {
-    "KI-48": [
+    "KI-45": [
       {
         'day': 1,
         'subjects': [
-          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 2,
         'subjects': [
-          {'name': 'Programming', 'order': 3, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Algorithms', 'order': 3, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 3,
         'subjects': [
-          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 6, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 4,
         'subjects': [
-          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Databases', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 5,
         'subjects': [
-          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+        ]
+      },
+    ],
+    "KI-46": [
+      {
+        'day': 1,
+        'subjects': [
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 2,
+        'subjects': [
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Algorithms', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 4, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 3,
+        'subjects': [
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 4,
+        'subjects': [
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 5,
+        'subjects': [
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
         ]
       },
     ],
@@ -123,34 +166,77 @@ class ScheduleData {
       {
         'day': 1,
         'subjects': [
-          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 2,
         'subjects': [
-          {'name': 'Programming', 'order': 3, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Algorithms', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 4, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 3,
         'subjects': [
-          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 4,
         'subjects': [
-          {'name': 'Testing', 'order': 6, 'link': 'fakeLink'},
-          {'name': 'Math', 'order': 4, 'link': 'fakeLink'}
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 6, 'link': 'fakeLink'},
         ]
       },
       {
         'day': 5,
         'subjects': [
-          {'name': 'Math', 'order': 1, 'link': 'fakeLink'}
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
+        ]
+      },
+    ],
+    "KI-48": [
+      {
+        'day': 1,
+        'subjects': [
+          {'name': 'Computer Networks', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 2,
+        'subjects': [
+          {'name': 'Algorithms', 'order': 3, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 3,
+        'subjects': [
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 4,
+        'subjects': [
+          {'name': 'Computer Networks', 'order': 6, 'link': 'fakeLink'},
+        ]
+      },
+      {
+        'day': 5,
+        'subjects': [
+          {'name': 'Operating Systems', 'order': 1, 'link': 'fakeLink'},
+          {'name': 'Software Engineering', 'order': 4, 'link': 'fakeLink'},
+          {'name': 'Databases', 'order': 6, 'link': 'fakeLink'},
+          {'name': 'Testing', 'order': 5, 'link': 'fakeLink'},
         ]
       },
     ],
