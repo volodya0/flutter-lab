@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Day {
   sunday,
   monday,
@@ -65,6 +67,21 @@ class ScheduleData {
   GroupSchedule getScheduleForGroup(String groupName) {
     return GroupSchedule(_dataRaw[groupName]!);
   }
+
+  String getTimeForSubject(int subjectOrder) {
+    List<int> time = _orderToTime[subjectOrder]!;
+    return '${time[0]}:${time[1]}';
+  }
+
+  final Map<int, List<int>> _orderToTime = {
+    1: [8, 30],
+    2: [10, 20],
+    3: [12, 10],
+    4: [14, 15],
+    5: [17, 00],
+    6: [18, 40],
+    7: [20, 20],
+  };
 
   final Map<String, List> _dataRaw = {
     "KI-48": [
