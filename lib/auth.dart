@@ -21,26 +21,33 @@ class _AuthPageState extends State<AuthPage> {
         body: Center(
           child: Column(
             children: [
-              TextFormField(
-                onChanged: (value) {
-                  firstName = value;
-                },
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
-                  hintText: 'What is your first name?',
-                  labelText: 'First name *',
-                ),
-              ),
-              TextFormField(
-                onChanged: (value) {
-                  lastName = value;
-                },
-                decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
-                  hintText: 'What is your last name?',
-                  labelText: 'Last name *',
-                ),
-              ),
+              Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: SizedBox(
+                    width: 400,
+                    child: Column(children: [
+                      TextFormField(
+                        onChanged: (value) {
+                          firstName = value;
+                        },
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.person),
+                          hintText: 'What is your first name?',
+                          labelText: 'First name *',
+                        ),
+                      ),
+                      TextFormField(
+                        onChanged: (value) {
+                          lastName = value;
+                        },
+                        decoration: const InputDecoration(
+                          icon: Icon(Icons.person),
+                          hintText: 'What is your last name?',
+                          labelText: 'Last name *',
+                        ),
+                      ),
+                    ]),
+                  )),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/home', arguments: {
