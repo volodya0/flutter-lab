@@ -2,26 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "a",
-            "request": "launch",
-            "type": "dart",
-            "args": [
-                "--no-sound-null-safety"
-            ]
-        },
-        {
-            "name": "a (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "a (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
             "name": "Flutter (macOS)",
             "program": "lib/main.dart",
             "deviceId": "macos",
