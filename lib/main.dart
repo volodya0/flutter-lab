@@ -57,8 +57,8 @@ class _HomePageState extends State<HomePage> {
     result.add('Time: ${data['location']['localtime']}');
     result.add(
         'Temperature: ${data['current']['temperature']}, feels like ${data['current']['feelslike']}');
-    result.add('Wind spreed: ${data['current']['wind_speed']}');
-    result.add('Wind spreed: ${data['current']['visibility']}');
+    result.add('Wind speed: ${data['current']['wind_speed']}');
+    result.add('Visibility: ${data['current']['visibility']}');
     result.add('Pressure: ${data['current']['pressure']}');
 
     return result;
